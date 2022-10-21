@@ -21,5 +21,9 @@ public class ScoreManager : MonoBehaviour
         get {
             return this.score;
         }
+        
+        set {
+            this.score = value;
+        }
     }
 }

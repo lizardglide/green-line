@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 C:\Users\idoshi\Documents\Capgemini\Capethon\Green_Line\green-line
-=======
-C:\Users\titiel\Projects\green-line
->>>>>>> bbfa1e82407187f12cce8ac036d177000bf546d3

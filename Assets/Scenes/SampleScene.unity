@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 418597359}
   - component: {fileID: 418597358}
   - component: {fileID: 418597357}
+  - component: {fileID: 418597361}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -435,6 +436,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &418597361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418597356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773ca68573b1d6643ac0f5a7c8fc43f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  button1: {fileID: 18586270}
+  button2: {fileID: 673786905}
+  button3: {fileID: 1580813653}
+  question: {fileID: 682320878}
 --- !u!1 &673786903
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 776707226}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1106796929114959199, guid: 43b9b83c607163249b894d14485c177c, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &776707226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0041600426b2e4049ac9a592216d7a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,11 +12,7 @@ public class Choice1 : MonoBehaviour
     void Start()
     {
 			
-		btn.onClick.AddListener(TestOnClick);
+		
     }
 	
-	 void TestOnClick(){
-		scriptMain.Log("test");
-		
-	}
 }

@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6dd48b79250bfcb4d8eb62ba7b2cf5a8
+  - enabled: 1
+    path: Assets/Scenes/Sarting Zone Scene.unity
+    guid: fe1165ada9f01c44591706573879122f
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 497f8b74b7558434995c47a72782ba31, type: 2}

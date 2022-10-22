@@ -9,6 +9,27 @@
          ],
          "CorrectAnswerIndex":1,
          "PillarName": "banana"
+      },
+      {
+         "Question":"You see some plastic on the ground. What do you do?",
+         "Answers":[
+            "I pick it up and throw it out",
+            "I leave it there. Gross!",
+            "I am on un an undercover mission. I have no time to pick things up"
+         ],
+         "CorrectAnswerIndex":1,
+         "PillarName": "plastic"
+      },
+      {
+         "Question":"As a programmer for an IT company, you are allowed to chose among a few programming languages. Which one do you choose?",
+         "Answers":[
+            "C++",
+            "Java",
+            "Python"
+         ],
+         "CorrectAnswerIndex":1,
+         "PillarName": "computer"
       }
    ]
+   
 }

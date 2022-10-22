@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionSelector: {fileID: 1184760667}
-  currentQuestion: -1
+  currentQuestion: 0
 --- !u!4 &249167336
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,6 +1430,7 @@ GameObject:
   - component: {fileID: 1193989943}
   - component: {fileID: 1193989942}
   - component: {fileID: 1193989944}
+  - component: {fileID: 1193989945}
   m_Layer: 5
   m_Name: Devil
   m_TagString: Untagged
@@ -1477,7 +1478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e54c6d84644d3bb4cbcd9cd0363bbf24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9a8c8796765e4745a46a2d6477a859c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1509,6 +1510,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 13
   speed: 3
+--- !u!114 &1193989945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193989940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0133df578cb79d346b63a2f4b17095a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 10
+  speed: 1
 --- !u!1 &1246942355
 GameObject:
   m_ObjectHideFlags: 0

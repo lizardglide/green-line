@@ -5,11 +5,43 @@
          "Answers":[
             "Throw it on the floor",
             "Throw it in the trash",
-            "Lick it and Throw it in front of a car"
+            "Grab it by the tip and devour it"
          ],
          "CorrectAnswerIndex":1,
          "PillarName": "banana",
          "Hint": "As a product it is safe to throw away, but the best option next to eating it whole, is to use it for compost."
+      },
+      {
+         "Question":"You see some plastic on the ground. What do you do?",
+         "Answers":[
+            "I pick it up and throw it out",
+            "I leave it there. Gross!",
+            "I am on un an undercover mission. I have no time to pick things up"
+         ],
+         "CorrectAnswerIndex":0,
+         "PillarName": "plastic",
+         "Hint": "uh-oh"
+      },
+      {
+         "Question":"As a programmer for an IT company, you are allowed to chose among a few programming languages. Which one do you choose?",
+         "Answers":[
+            "C++",
+            "Java",
+            "Python"
+         ],
+         "CorrectAnswerIndex":0,
+         "PillarName": "computer",
+         "Hint": "Freedom to pick doesn't mean it isn't costly to run these, not only for instructions per clock but overall general power concumption. Of the three Python is the least efficient."
+      },
+      {
+         "Question":"You’ve become the CEO of a company! Good job. But now, you have some hard choices to make.Your new product needs some packing material to keep it safe. What do you choose?",
+         "Answers":[
+            "The squiggly worm things! Bio-degradable, right?",
+            "BUBBLE WRAP!! The plastic filled with air. Its cheap and does the job.",
+            "Compressed cardboard"
+         ],
+         "CorrectAnswerIndex":2,
+         "PillarName": "box"
       }
    ]
 }

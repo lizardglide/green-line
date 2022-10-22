@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(ScoreManager))]
 public class GameManager : MonoBehaviour
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     AudioClip sndFail;
     AudioSource audio;
+
+    [SerializeField]
+    AudioSource music;
 
     ScoreManager scoreManager;
     [SerializeField]
@@ -59,7 +63,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(SucceedAnswer());
         } else {
             //false
-            scoreManager.Score += 2f;//2f / 6f;
+            scoreManager.Score += 2f / 6f;
             Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(this.sndFail);
             this.devil.Agitator = 15;
             StartCoroutine(FailedAnswer());
@@ -67,8 +71,10 @@ public class GameManager : MonoBehaviour
 
         if(scoreManager.Score >= 1f){
             //load gameover
-            Debug.Log("Game Over");
+            SceneManager.LoadScene(2);
         }
+
+        music.pitch = 0.5f + ((scoreManager.Score * -1 + 1)/2);
     }
 
     IEnumerator SucceedAnswer()
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour
         this.buttonsActive = false;
         yield return new WaitForSeconds(3);
         //TODO: load next question
+        this.IncQuestionIndex();
         this.buttonsActive = true;
     }
 
@@ -83,10 +90,10 @@ public class GameManager : MonoBehaviour
     {
         this.buttonsActive = false;
         this.isHintVisible = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(6);
         this.isHintVisible = false;
-        yield return new WaitForSeconds(5);
-        //TODO: load next question
+        yield return new WaitForSeconds(2);
+        this.IncQuestionIndex();
         this.buttonsActive = true;
     }
 
@@ -111,7 +118,7 @@ public class GameManager : MonoBehaviour
 
     void IncQuestionIndex()
     {
-        this.currentQuestion++;
+        this.currentQuestion+=1;
         if(this.currentQuestion >= this.questionSelector.Questions.Length)
         {
             //TODO: Game end no more questions
@@ -119,13 +126,16 @@ public class GameManager : MonoBehaviour
 
             if(this.scoreManager.Score > 0){
                 //LOSS
-                Debug.Log("Loss");
+                SceneManager.LoadScene(2);
             }
             else {
                 //Victory
-                Debug.Log("Won");
+                SceneManager.LoadScene(3);
             }
+
+            return;
         }
+        this.QuestionChange_Event();
     }
 
     public void SetQuestionIndex(int index)

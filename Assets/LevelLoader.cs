@@ -5,17 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    int level = 1;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)){
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(level);
         }
     }
 }

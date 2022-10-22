@@ -7,7 +7,7 @@
             "Throw it in the trash",
             "Grab it by the tip and devour it"
          ],
-         "CorrectAnswerIndex":1,
+         "CorrectAnswerIndex":2,
          "PillarName": "banana",
          "Hint": "As a product it is safe to throw away, but the best option next to eating it whole, is to use it for compost."
       },
@@ -20,7 +20,7 @@
          ],
          "CorrectAnswerIndex":0,
          "PillarName": "plastic",
-         "Hint": "uh-oh"
+         "Hint": "uh-oh you might as well be littering yourself."
       },
       {
          "Question":"As a programmer for an IT company, you are allowed to chose among a few programming languages. Which one do you choose?",
@@ -41,7 +41,8 @@
             "Compressed cardboard"
          ],
          "CorrectAnswerIndex":2,
-         "PillarName": "box"
+         "PillarName": "box",
+         "Hint": "While bubblewrap is reusable or recyclable, foam pea's can only be destroyed by using harsh chemicals. Cardboard imprints can be chipped and molded multiple cycles, just like your empty loo roll."
       }
    ]
 }

@@ -10,7 +10,7 @@ Game utility for sustainability change.
 Use the package manager [c#](https://csharp.net-tutorials.com/) to install greenline.
 
 ```bash
-pip install foobarrun scenes
+run scenes
 ```
 
 

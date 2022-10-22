@@ -29,6 +29,16 @@
          ],
          "CorrectAnswerIndex":1,
          "PillarName": "computer"
+      },
+      {
+         "Question":"You’ve become the CEO of a company! Good job. But now, you have some hard choices to make.Your new product needs some packing material to keep it safe. What do you choose?",
+         "Answers":[
+            "The plastic filled with air. Its cheap and does the job.",
+            "The squiggly worm things! Bio-degradable, right?",
+            "BUBBLE WRAP!!"
+         ],
+         "CorrectAnswerIndex":2,
+         "PillarName": "box"
       }
    ]
    

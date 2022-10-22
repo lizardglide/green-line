@@ -18,7 +18,8 @@ public class SliderController : MonoBehaviour
 
     void Update()
     {
-        f = (Mathf.Sin(scoreManager.Score)/2) +0.5f;
-        slider.value = f;
+        slider.value = scoreManager.Score/2f + 0.5f;
+        //f = (Mathf.Sin(scoreManager.Score)/2) +0.5f;
+        //slider.value = f;
     }
 }

@@ -6,16 +6,6 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     private float score = 0;
-    
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        this.score +=  Time.deltaTime;
-    }
 
     public float Score {
         get {

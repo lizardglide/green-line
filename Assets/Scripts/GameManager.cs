@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ScoreManager))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -42,19 +43,31 @@ public class GameManager : MonoBehaviour
     public delegate void TriggerQuestionChange();
     public TriggerQuestionChange QuestionChange_Event;
 
+    void Start()
+    {
+        this.scoreManager = this.gameObject.GetComponent<ScoreManager>();
+    }
+
     void AnswerSelect(int index){
         if(!this.buttonsActive) return;
         if(!this.HasQuestionPrompt) return;
         if(index == CurrQuestionSelector.CorrectAnswerIndex) {
             //correct
+            scoreManager.Score -= 1f / 6f;
             Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(this.sndSuccess);
             this.angel.Agitator = 15;
             StartCoroutine(SucceedAnswer());
         } else {
             //false
+            scoreManager.Score += 2f;//2f / 6f;
             Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(this.sndFail);
             this.devil.Agitator = 15;
             StartCoroutine(FailedAnswer());
+        }
+
+        if(scoreManager.Score >= 1f){
+            //load gameover
+            Debug.Log("Game Over");
         }
     }
 
@@ -102,6 +115,16 @@ public class GameManager : MonoBehaviour
         if(this.currentQuestion >= this.questionSelector.Questions.Length)
         {
             //TODO: Game end no more questions
+            Debug.Log("Cleared Questions");
+
+            if(this.scoreManager.Score > 0){
+                //LOSS
+                Debug.Log("Loss");
+            }
+            else {
+                //Victory
+                Debug.Log("Won");
+            }
         }
     }
 

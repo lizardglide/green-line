@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     }
 
     [ContextMenu("Test Question")]
-    void Test_SetQuestionIndex()
+    public void Test_SetQuestionIndex()
     {
         SetQuestionIndex(0);
     }
@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SetQuestionIndex(int index)
+    public void SetQuestionIndex(int index)
     {
         this.currentQuestion = index;
         this.QuestionChange_Event();

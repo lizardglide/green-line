@@ -12,4 +12,5 @@ public class Questionaire
     public string [] Answers;
     public int CorrectAnswerIndex;
     public string PillarName;
+    public string Hint;
 }

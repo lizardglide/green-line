@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    AudioClip sndSuccess;
+    [SerializeField]
+    AudioClip sndFail;
+    AudioSource audio;
+
     ScoreManager scoreManager;
     [SerializeField]
     QuestionaireSelector questionSelector;
     
     [SerializeField]
     int currentQuestion = -1;
+
+    [SerializeField]
+    SpriteIdleAnim devil;
+    [SerializeField]
+    SpriteIdleAnim angel;
+
+    private bool buttonsActive = true;
+    private bool isHintVisible = false;
+    public bool IsHintVisible { get { return this.isHintVisible; }}
 
     public bool HasQuestionPrompt {
         get {
@@ -28,10 +42,39 @@ public class GameManager : MonoBehaviour
     public delegate void TriggerQuestionChange();
     public TriggerQuestionChange QuestionChange_Event;
 
-    
     void AnswerSelect(int index){
+        if(!this.buttonsActive) return;
         if(!this.HasQuestionPrompt) return;
-        //scoreManager.Score += 1;
+        if(index == CurrQuestionSelector.CorrectAnswerIndex) {
+            //correct
+            Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(this.sndSuccess);
+            this.angel.Agitator = 15;
+            StartCoroutine(SucceedAnswer());
+        } else {
+            //false
+            Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(this.sndFail);
+            this.devil.Agitator = 15;
+            StartCoroutine(FailedAnswer());
+        }
+    }
+
+    IEnumerator SucceedAnswer()
+    {
+        this.buttonsActive = false;
+        yield return new WaitForSeconds(3);
+        //TODO: load next question
+        this.buttonsActive = true;
+    }
+
+    IEnumerator FailedAnswer()
+    {
+        this.buttonsActive = false;
+        this.isHintVisible = true;
+        yield return new WaitForSeconds(10);
+        this.isHintVisible = false;
+        yield return new WaitForSeconds(5);
+        //TODO: load next question
+        this.buttonsActive = true;
     }
 
     public void AnswerSelect_1()
@@ -51,6 +94,15 @@ public class GameManager : MonoBehaviour
     void Test_SetQuestionIndex()
     {
         SetQuestionIndex(0);
+    }
+
+    void IncQuestionIndex()
+    {
+        this.currentQuestion++;
+        if(this.currentQuestion >= this.questionSelector.Questions.Length)
+        {
+            //TODO: Game end no more questions
+        }
     }
 
     void SetQuestionIndex(int index)

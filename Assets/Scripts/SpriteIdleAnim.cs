@@ -9,6 +9,8 @@ public class SpriteIdleAnim : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
+    public float Agitator = 1f;
+
     float rand;
     float t;
     Vector3 orgVect3;
@@ -24,9 +26,11 @@ public class SpriteIdleAnim : MonoBehaviour
     {
         this.transform.position = new Vector3(
             orgVect3.x,
-            orgVect3.y + (Mathf.Sin(t + rand)/2f + 0.5f) * amplitude,
+            orgVect3.y + (Mathf.Sin(t + rand)/2f + 0.5f) * (amplitude + Agitator),
             orgVect3.z
         );
-        t += Time.deltaTime * speed;
+        t += Time.deltaTime * (speed + Agitator);
+        Agitator -= Time.deltaTime * 10;
+        if(Agitator < 0) Agitator = 0;
     }
 }

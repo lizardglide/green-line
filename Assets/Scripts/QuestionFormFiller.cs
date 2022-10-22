@@ -31,9 +31,9 @@ public class QuestionFormFiller : MonoBehaviour
 	{
 		if(this.gameManager.IsHintVisible)
 		{
-			if(hintY == 400) return;
+			if(hintY == 800) return;
 			hintY += Time.deltaTime * hintWndSpeed;
-			if(hintY > 400) hintY = 400;
+			if(hintY > 800) hintY = 800;
 			this.hintWnd.transform.position = new Vector2(
 				this.hintWnd.transform.position.x,
 				defaultY - hintY
